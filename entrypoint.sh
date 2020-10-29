@@ -31,7 +31,7 @@ for PY_VER in "${arrPY_VERSIONS[@]}"; do
     fi
 
     # Build wheels
-    /opt/python/"${PY_VER}"/bin/pip wheel . ${PIP_WHEEL_ARGS} || { echo "Building wheels failed."; exit 1; }
+    /opt/python/"${PY_VER}"/bin/python setup.py bdist_wheel . ${PIP_WHEEL_ARGS} || { echo "Building wheels failed."; exit 1; }
 done
 
 # Bundle external shared libraries into the wheels

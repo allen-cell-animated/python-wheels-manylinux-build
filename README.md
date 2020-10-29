@@ -1,18 +1,19 @@
 # Python wheels manylinux build - GitHub Action
 
-![GitHub release](https://flat.badgen.net/github/release/RalfG/python-wheels-manylinux-build)
-![License](https://flat.badgen.net/github/license/RalfG/python-wheels-manylinux-build)
-![Open issues](https://flat.badgen.net/github/open-issues/RalfG/python-wheels-manylinux-build)
-![Merged PRs](https://flat.badgen.net/github/merged-prs/RalfG/python-wheels-manylinux-build)
-![GitHub Stars](https://flat.badgen.net/github/stars/RalfG/python-wheels-manylinux-build)
-![GitHub Forks](https://flat.badgen.net/github/forks/RalfG/python-wheels-manylinux-build)
+![GitHub release](https://flat.badgen.net/github/release/allen-cell-animated/python-wheels-manylinux-build)
+![License](https://flat.badgen.net/github/license/allen-cell-animated/python-wheels-manylinux-build)
+![Open issues](https://flat.badgen.net/github/open-issues/allen-cell-animated/python-wheels-manylinux-build)
+![Merged PRs](https://flat.badgen.net/github/merged-prs/allen-cell-animated/python-wheels-manylinux-build)
+![GitHub Stars](https://flat.badgen.net/github/stars/allen-cell-animated/python-wheels-manylinux-build)
+![GitHub Forks](https://flat.badgen.net/github/forks/allen-cell-animated/python-wheels-manylinux-build)
 
 Build manylinux wheels for a (Cython) Python package.
 
 This action uses the [manylinux](https://github.com/pypa/manylinux) containers to
 build manylinux wheels for a (Cython) Python package. The wheels are placed in a
 new directory `<package-path>/dist` and can be uploaded to PyPI in the next step of your
-workflow.
+workflow. *This action differs from the original from which it was forked as it uses `python setup.py bdist_wheel` to
+build the wheel rather than `pip wheel`*
 
 ## Usage
 
@@ -20,7 +21,7 @@ workflow.
 Minimal:
 
 ```yaml
-uses: RalfG/python-wheels-manylinux-build@v0.3.1
+uses: allen-cell-animated/python-wheels-manylinux-build@v0.3.1
 with:
   python-versions: 'cp36-cp36m cp37-cp37m'
 ```
@@ -28,7 +29,7 @@ with:
 Using all arguments:
 
 ```yaml
-uses: RalfG/python-wheels-manylinux-build@v0.3.1-manylinux2010_x86_64
+uses: allen-cell-animated/python-wheels-manylinux-build@v0.3.1-manylinux2010_x86_64
 with:
   python-versions: 'cp36-cp36m cp37-cp37m'
   build-requirements: 'cython numpy'
@@ -39,7 +40,7 @@ with:
 ```
 
 See
-[full_workflow_example.yml](https://github.com/RalfG/python-wheels-manylinux-build/blob/master/full_workflow_example.yml)
+[full_workflow_example.yml](https://github.com/allen-cell-animated/python-wheels-manylinux-build/blob/master/full_workflow_example.yml)
 for a complete example that includes linting and uploading to PyPI.
 
 
@@ -63,10 +64,10 @@ wheels are not accepted by PyPI.
 ### Using a different manylinux container
 The `manylinux2010_x86_64` container is used by default. To use another manylinux
 container, append `-<container-name>` to the reference. For example:
-`RalfG/python-wheels-manylinux-build@v0.3.1-manylinux2014_aarch64` instead of
-`RalfG/python-wheels-manylinux-build@v0.3.1`.
+`allen-cell-animated/python-wheels-manylinux-build@v0.3.1-manylinux2014_aarch64` instead of
+`allen-cell-animated/python-wheels-manylinux-build@v0.3.1`.
 
 ## Contributing
 Bugs, questions or suggestions? Feel free to post an issue in the
-[issue tracker](https://github.com/RalfG/python-wheels-manylinux-build/issues)
+[issue tracker](https://github.com/allen-cell-animated/python-wheels-manylinux-build/issues)
 or to make a pull request!
